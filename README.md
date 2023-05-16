@@ -1,12 +1,12 @@
 This is an effort to create a general template for most projects
 
-## RESOURCES
+## Resources
 
-https://experimentology.io/13-management
-http://www.practicereproducibleresearch.org/
-https://poldracklab.github.io/research/research.html
-https://dsi-cores.github.io/OpenByDesign/README.html
-https://science.nasa.gov/open-science/transform-to-open-science
+https://experimentology.io/13-management  
+http://www.practicereproducibleresearch.org/  
+https://poldracklab.github.io/research/research.html  
+https://dsi-cores.github.io/OpenByDesign/README.html  
+https://science.nasa.gov/open-science/transform-to-open-science  
 
 
 ## To be resolved
