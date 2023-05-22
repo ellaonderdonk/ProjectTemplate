@@ -4,8 +4,8 @@ For example:
 
 ```
 |_writing
-    |_NeuroeconConference
+    |_neuroecon_conference
         |_abstract.txt
-    |_PsychSci
-    |_ELife
+    |_psych_sci
+    |_elife
 ```

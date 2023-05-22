@@ -5,7 +5,7 @@ For example:
 ```
 |_presentations
     |_NeuroeconConference
-        |_NeuroeconPoster.pdf
+        |_Neuroecon_2023_overtrained_decisions_poster_.pdf
     |_RangelLabMeeting
-        |_May2023.ppt
+        |_May2023_overtrained_decisions_lab_meeting.ppt
 ```
