@@ -1,1 +1,1 @@
-This is where all figures from behavioral analyses go
+This is where all figures from analyses go
