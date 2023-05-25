@@ -23,7 +23,7 @@ https://experimentology.io/13-management
 ## To be resolved
 
 - The minimal amount of library/package info
-- Where should `cluster_scripts` go?
+
 - Narrative overview of code and the order it is ought to be run in
     - Would a README be a good place to put that info? But one README per directory is unlikely to be enough
 - Naming of intermediate analysis notebooks
@@ -33,14 +33,18 @@ https://experimentology.io/13-management
     Our experience from teaching data science is that the quality of a computation notebook is greatly improved by two practices. The first is documentation. All codes should have documentation that specifies: (i) what the function does, (ii) the types of arguments to the function, and (iii) the types of values returned by the function. A second consideration is to make sure that there is a test for each function, typically within the same cell as the function definition so that the test is run when the function is defined. A final consideration is when to move code from a notebook to a Python module (a file that has extension ‘.py’).
     ```
 - What should the `run_all_analyses.R` script and its outputs look like?
-- Do we want to have general style guidance? Or is this too restrictive?
-    - Eg. Matlab style function saving `function.m` or defining within bigger scripts?
+
 - Test writing for scripts
     - Where do tests fit in when exploring/figuring out how to do something like in notebooks?
+
 - Different type of projects: e.g. theoretical/simulation based, meta-analyses
-- Tracking changes in data (from raw to processed)
-- Connecting figures to scripts that generated them
-    - Editing image meta-data with the code/script that generated it
-- Linking files in raw_data to code/collection procedure that collected it in experiment
+
 - Sample codebook/data dictionary. Packages that automate this codebook, dataspice, and dataMaid (Arslan, 2019)
+
 - Reconsider where to share data (see experimentology chapter 13 for why)
+
+- What to put in a general .gitignore
+- Data version control
+    - Linking files in raw_data to code/collection procedure that collected it in experiment
+
+- Keep this as the bare bones clone-able directory and populate with examples separately
