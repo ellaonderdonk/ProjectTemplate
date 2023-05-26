@@ -34,7 +34,7 @@ fi
 
 # If relevant, update list of Python packages
 # TODO: figure out a better way to manage dependencies
-PIPREQS=$(pip freeze)
+PIPREQS=$(pip list --format=freeze)
 if [[ (! -f requirements.txt || "$(cat requirements.txt)" != "$PIPREQS") \
         && "$(find . -name '*.py' -print -quit)" ]]; then
     echo "$PIPREQS" > requirements.txt
