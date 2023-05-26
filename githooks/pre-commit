@@ -1,0 +1,43 @@
+#!/bin/sh
+#
+# To skip this hook, commit with option -n or --no-verify
+
+# CONFIG
+MAX_LINE_LENGTH=80
+
+
+exitEarlyIf() {
+    if [ $? -ne 0 ]; then
+        echo "pre-commit: $1; aborting commit"
+        echo 'run `git commit -n [...]` to commit anyway'
+        exit 1
+    fi
+}
+
+
+set -o pipefail
+OPTIONS="--max-line-length=$MAX_LINE_LENGTH"
+CHANGED_FILES=$(git diff --cached --name-only | grep -E '\.py$')
+
+# Run autopep8 on any files that need it and print changed files
+if [ "$CHANGED_FILES" ]; then
+    TO_FORMAT=$(autopep8 -d $OPTIONS $CHANGED_FILES \
+        | grep -E '^--- original/.+\.py$' | sed 's/--- original\///')
+    exitEarlyIf 'failed to get autopep8 diffs'
+    if [ "$TO_FORMAT" ]; then
+        autopep8 -i $OPTIONS $TO_FORMAT
+        exitEarlyIf 'failed to format files'
+        echo "autopep8 formatted the following files:\n$TO_FORMAT"
+        git add $TO_FORMAT
+    fi
+fi
+
+# If relevant, update list of Python packages
+# TODO: figure out a better way to manage dependencies
+PIPREQS=$(pip freeze)
+if [[ (! -f requirements.txt || "$(cat requirements.txt)" != "$PIPREQS") \
+        && "$(find . -name '*.py' -print -quit)" ]]; then
+    echo "$PIPREQS" > requirements.txt
+    echo 'updated requirements.txt'
+    git add requirements.txt
+fi
