@@ -43,7 +43,6 @@ https://experimentology.io/13-management
 
 - Reconsider where to share data (see experimentology chapter 13 for why)
 
-- What to put in a general .gitignore
 - Data version control
     - Linking files in raw_data to code/collection procedure that collected it in experiment
 
